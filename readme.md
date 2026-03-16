@@ -62,14 +62,17 @@ Two logout mechanisms are supported:
 
 ## API Endpoints
 
+### Authentication APIs
+
 | Method | Endpoint | Description |
 |------|------|------|
-| POST | `/api/auth/register` | Register user and send OTP |
-| POST | `/api/auth/verify-otp` | Verify OTP and activate account |
-| POST | `/api/auth/login` | Login verified user |
-| POST | `/api/auth/refresh-token` | Generate new access token |
-| POST | `/api/auth/logout` | Logout from current device |
-| POST | `/api/auth/logout-all` | Logout from all devices |
+| POST | `/api/auth/register` | Register a new user and send email verification OTP |
+| POST | `/api/auth/login` | Login user (only if email is verified) |
+| GET | `/api/auth/get-me` | Get currently authenticated user details |
+| GET | `/api/auth/refresh-token` | Generate a new access token using refresh token |
+| GET | `/api/auth/logout` | Logout from current device |
+| GET | `/api/auth/logout-all` | Logout from all devices |
+| GET | `/api/auth/verify-email` | Verify user email using OTP/token |
 
 ---
 
